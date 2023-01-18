@@ -1,0 +1,11 @@
+body{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+#mid{
+    border: 1px solid red;
+    height:300px;
+    width:400px
+}

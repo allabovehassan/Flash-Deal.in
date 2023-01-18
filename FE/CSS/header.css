@@ -1,0 +1,70 @@
+header {
+  border: 1px solid red;
+  height: 130px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#headerChild1 {
+  border: 1px solid green;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#hc11 {
+  border: 1px solid black;
+  display: flex;
+  width: 16%;
+}
+
+#hc11 > div {
+  border: 1px solid khaki;
+  width: 30%;
+}
+#hc11 > div ~ div {
+  border: 1px solid khaki;
+  width: 60%;
+}
+
+#hc11 > div > img {
+  width: 30%;
+}
+
+#hc12 {
+  border: 1px solid black;
+  display: flex;
+  width: 16%;
+}
+#hc13 {
+  border: 1px solid black;
+  display: flex;
+  width: 16%;
+}
+#hc14 {
+  border: 1px solid black;
+  display: flex;
+  width: 16%;
+}
+#hc15 {
+  border: 1px solid black;
+  display: flex;
+  width: 16%;
+}
+#hc16 {
+  border: 1px solid black;
+  display: flex;
+  width: 16%;
+}
+
+#headerChild2 {
+  border: 1px solid green;
+  width: 100%;
+  height: 45%;
+}
+#headerChild3 {
+  border: 1px solid green;
+  width: 100%;
+  height: 30%;
+}
