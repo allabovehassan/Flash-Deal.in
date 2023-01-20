@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register User | Flash Deal</title>
+    <link rel="stylesheet" href="../CSS/footer.css" />
+    <link rel="stylesheet" href="../CSS/header.css" />
+    <link rel="stylesheet" href="../CSS/register.css" />
+  </head>
+  <body>
+    <header>
+      <div id="headerChild2">
+        <div id="hc21" onclick="window.location.href='../index.html'">
+          <img src="../IMAGES/Flash_Deal_Logonew.png" alt="flash deal logo" />
+        </div>
+
+        <div id="hc22">
+          <div id="hc221">
+            <div id="cityname">
+              <img src="../IMAGES/pin.png" alt="" />
+            </div>
+
+            <div id="cityform">
+              <select name="city" id="city">
+                <option value="volvo"></option>
+                <option value="volvo">Delhi</option>
+                <option value="saab">Mumbai</option>
+                <option value="mercedes">Banglore</option>
+                <option value="audi">Chennai</option>
+              </select>
+            </div>
+          </div>
+          <div id="hc222">
+            <div id="insearch">
+              <input
+                type="search"
+                id="searchpro"
+                placeholder="Enter Products"
+              />
+            </div>
+            <div id="insubmit">
+              <img src="../IMAGES/searchwhite.png" alt="search" />
+            </div>
+          </div>
+        </div>
+
+        <div id="hc23">
+          <div id="hc231">
+            <div id="adminlogo">
+              <img src="../IMAGES/avatar.png" alt="" />
+            </div>
+            <div id="logdiv">
+              <p onclick="window.location.href='./register.html'">
+                Login/Register
+              </p>
+            </div>
+          </div>
+          <div id="hc232" onclick="window.location.href='../HTML/ad_post_page.html'">
+            <p>Post Free Ad</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <hr /> -->
+    </header>
+
+
+
+<!-- -------------------main-register-form--------------- -->
+    <div id="Register_box">
+
+
+      <div class="container">
+      <form id="regfor">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+    <label for="age"><b>Age</b></label>
+    <input type="text" placeholder="Enter Age" name="age" id="age" required>
+    <hr>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+    <input type="submit" class="registerbtn" value="Register">
+
+    <!-- <button type="submit" class="registerbtn" onclick="registerUser()">Register</button> -->
+  </form>
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a id="regisign"
+      onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign in</a>.</p>
+  </div>
+
+
+
+
+
+<!-- ------------------------------------------------ -->
+<!-- login popup -->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <!-- <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div> -->
+
+    <div class="container">
+      <label id="login_email" for="uname"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input id="login_psw" type="password" placeholder="Enter Password" name="psw" required>
+        
+
+       <input type="submit" id="loginsubmit" value="Login">
+
+      <!-- <button type="submit" onclick="loginUser()" >Login</button> -->
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <!-- <span class="psw">New User <a href="./register.html"> Register</a></span> -->
+    </div>
+  </form>
+</div>
+
+
+        
+    </div>
+
+    <footer>
+      <div id="f1" style="border-right: 0.5px solid lightgray">
+        <div id="f11">
+          <a href="">About Us</a>
+          <a href="">Contact Us</a>
+          <a href="">Flash Deal Videos</a>
+          <a href="">Advertise With Us</a>
+          <a href="">Blog</a>
+        </div>
+        <div id="f12">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
+            ipsam ratione officiis perferendis nobis ad libero, totam esse
+            excepturi mollicdtia, accusamus sit laboriosam voluptas quo
+            consectetur voluptatem facere eaque fugit unde. Architecto quod
+            nulla minima quas ipsam eos recusandae cupiditate. Qui eveniet
+            officiis ducimus veniam .
+          </p>
+        </div>
+        <div id="f13">
+          <span
+            >At Flash Deal, you can buy, sell or rent anything you can think of.
+          </span>
+          <div onclick="window.location.href='../HTML/ad_post_page.html'">
+            <p>Post Free Ad</p>
+          </div>
+        </div>
+      </div>
+      <div id="f2">
+        <div id="f211">
+          <div class="f2icon">
+            <p>Follow Us</p>
+          </div>
+          <div class="f2icon">
+            <img src="../IMAGES/facebook.png" alt="" />
+          </div>
+          <div class="f2icon">
+            <img src="../IMAGES/linkedin.png" alt="" />
+          </div>
+          <div class="f2icon"><img src="../IMAGES/youtube.png" alt="" /></div>
+          <div class="f2icon"><img src="../IMAGES/twitter.png" alt="" /></div>
+          <div class="f2icon">
+            <img src="../IMAGES/google-plus.png" alt="" />
+          </div>
+        </div>
+        <nav>
+          <div class="navc">
+            <p>Download App</p>
+          </div>
+          <div class="navc">
+            <img src="../IMAGES/apple-logo.png" alt="" />
+          </div>
+          <div class="navc">
+            <img src="../IMAGES/play-store.png" alt="" />
+          </div>
+        </nav>
+      </div>
+    </footer>
+
+    <div id="last">
+      Copyright © 2008 - 2023 Flash Deal India Private Limited
+    </div>
+  </body>
+</html>
+<script>
+  var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+document.querySelector(".registerbtn").addEventListener("click",registerUser)
+
+function registerUser(e){
+  e.preventDefault()
+  let obj = {
+    name:document.querySelector("#name").value,
+    email:document.querySelector("#email").value,
+    pass:document.querySelector("#psw").value,
+    age:document.querySelector("#age").value
+  }
+
+
+  console.log(obj)
+}
+
+document.querySelector("#loginsubmit").addEventListener("click",loginUser)
+
+function loginUser(e){
+  e.preventDefault()
+  let obj={
+    email:document.querySelector(".modal-content #email").value,
+    password:document.querySelector(".modal-content #psw").value
+  }
+  console.log(obj)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -56,14 +56,14 @@
         </div>
 
         <div id="childofhc162">
-          <p>Cart</p>
+          <p onclick="location.href='./HTML/cart.html'">Cart</p>
         </div>
       </div>
     </div>
     <!-- <hr /> -->
     <header>
       <div id="headerChild2">
-        <div id="hc21">
+        <div id="hc21" onclick="window.location.href='./index.html'">
           <img src="./IMAGES/Flash_Deal_Logonew.png" alt="flash deal logo" />
         </div>
 
@@ -103,10 +103,12 @@
               <img src="./IMAGES/avatar.png" alt="" />
             </div>
             <div id="logdiv">
-              <p>Login/Register</p>
+              <p onclick="document.getElementById('id01').style.display='block'" >
+                Login/Register
+              </p>
             </div>
           </div>
-          <div id="hc232">
+          <div id="hc232" onclick="window.location.href='./HTML/ad_post_page.html'">
             <p>Post Free Ad</p>
           </div>
         </div>
@@ -477,7 +479,7 @@
           <span
             >At Flash Deal, you can buy, sell or rent anything you can think of.
           </span>
-          <div>
+          <div onclick="window.location.href='./HTML/ad_post_page.html'">
             <p>Post Free Ad</p>
           </div>
         </div>
@@ -516,5 +518,66 @@
     <div id="last">
       Copyright © 2008 - 2023 Flash Deal India Private Limited
     </div>
+
+
+
+
+<!-- -------------------------------------------------------- -->
+<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
+
+<div id="id01" class="modal">
+  <form class="modal-content animate">
+  
+  <!-- <div class="imgcontainer">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div> -->
+  
+  <div class="container">
+      <label for="uname"><b>Email</b></label>
+      <input id="email" type="text" placeholder="Enter Email" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input  id="psw" type="password" placeholder="Enter Password" name="psw" required>
+        
+      <input type="submit" id="loginsubmit" value="Login">
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+    
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">New User <a href="./HTML/register.html"> Register</a></span>
+    </div>
+  </form>
+</div>
+
   </body>
 </html>
+<script>
+  var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+document.querySelector("#loginsubmit").addEventListener("click",loginUser)
+
+function loginUser(e){
+  e.preventDefault()
+  let obj={
+    email:document.querySelector(".modal-content #email").value,
+    password:document.querySelector(".modal-content #psw").value
+  }
+  console.log(obj)
+}
+
+
+
+
+
+</script>
