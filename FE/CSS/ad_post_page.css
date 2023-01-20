@@ -1,0 +1,104 @@
+body{
+    background-color: #f3f3f3;
+}
+
+body>h1{
+    font-weight: 100;
+  color: rgb(51, 51, 51);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  font-size: 30px;
+}
+
+
+
+#postbox{
+    /* border: 1px solid red; */
+    height: 600px;
+    width:85%;
+    margin: auto;
+    background-color: white;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 1%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+
+#postbox1{
+    /* border: 1px solid green; */
+    width: 20%;
+}
+
+.categ{
+    /* border: 1px solid orange; */
+    /* width: 19%; */
+    height: 16.25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+.categ:hover{
+    background-color: #008bcf;
+    color: white;
+}
+.categ img{
+    width:30%;
+    height: 80%;
+}
+
+.categ p{
+    font-weight: lighter;
+  color: rgb(51, 51, 51);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+}
+
+.categ p:hover{
+    color: white;
+}
+
+#postbox2{
+    /* border: 1px solid green; */
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    
+}
+
+#postbox21{
+    /* border: 1px solid orange; */
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2%;
+}
+
+#submit{
+    font-size: large;
+    background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  
+}
+
+#submit:hover{
+  opacity: 0.8;
+}
+
+#uploadimg{
+    cursor: pointer;
+}
+
