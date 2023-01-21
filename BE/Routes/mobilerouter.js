@@ -11,6 +11,22 @@ mobileRoute.get("/", async (req, res) => {
   }
 });
 
+
+
+mobileRoute.get("/myads/:id", async (req, res) => {
+  let ID = req.params.id
+  try {
+    
+    let data = await mobileModel.find({userID:ID})
+    res.send(data)
+    console.log(data)
+  } catch (error) {
+    res.send({message:error.message})
+  }
+})
+
+
+
 mobileRoute.post("/add", async (req, res) => {
   let payload = req.body;
   try {

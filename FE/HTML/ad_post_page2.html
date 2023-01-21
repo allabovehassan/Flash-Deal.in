@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/header.css">
     <link rel="stylesheet" href="../CSS/ad_post_page.css">
+    <link rel="icon" type="image/x-icon" href="../IMAGES/FlashDeal_icon-removebgcrped.png">
 </head>
 <body>
      <header>
@@ -52,9 +53,9 @@
               <img src="../IMAGES/avatar.png" alt="" />
             </div>
             <div id="logdiv">
-              <p onclick="window.location.href='./register.html'">
+              <!-- <p onclick="window.location.href='./register.html'">
                 Login/Register
-              </p>
+              </p> -->
             </div>
           </div>
           <div id="hc232">
@@ -219,11 +220,79 @@ contact:document.querySelector("#contact").value,
 img:document.querySelector("#uploadimg").value
 
 }
-
 console.log(obj)
-
-
+connect(obj)
 
 }
+
+let url = "http://localhost:8080/mobile/add"
+
+async function connect(obj){
+   try {
+      let res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          token: localStorage.getItem("token"),
+        },
+        body: JSON.stringify(obj),
+      });
+      let data = await res.json();
+      alert(data.message);
+      if(data.message==="kindly Login First"){
+        window.location.href="../HTML/register.html"
+      }else {
+        // window.location.href="../HTML/ad_post_page.html"
+        alert(data.message)
+      }
+    } catch (error) {
+      console.log(error.message);
+      // alert({""})
+    }
+}
+
+
+let login_Username = localStorage.getItem("lname")
+  console.log(login_Username)
+
+  let xname=""
+
+  if(!login_Username){
+    xname="Login/Register"
+  }else{
+    xname=login_Username
+  }
+        
+      
+
+let userlogo = document.querySelector("#adminlogo")
+
+
+
+// userlogo.innerHTML = `
+//        ${xlogo.innerHTML}
+
+
+// `
+
+let xlogo = `<img src="./IMAGES/avatar.png" alt="" />`
+
+if(login_Username===null){
+
+}else{
+  // xlogo=`<img src="./IMAGES/avatar.png" alt="" /> onclick="window.location.href="./HTML/User_Page.html""`
+  userlogo.addEventListener("click",()=>{
+  window.location.href="./User_Page.html"
+})
+}
+
+
+let logbox = document.querySelector("#logdiv")
+
+logbox.innerHTML=`
+  <p onclick="document.getElementById('id01').style.display='block'" >${xname}</p>
+
+`
+
 
 </script>

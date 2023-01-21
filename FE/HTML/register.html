@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../CSS/footer.css" />
     <link rel="stylesheet" href="../CSS/header.css" />
     <link rel="stylesheet" href="../CSS/register.css" />
+    <link rel="icon" type="image/x-icon" href="../IMAGES/FlashDeal_icon-removebgcrped.png">
   </head>
   <body>
     <header>
@@ -52,9 +53,9 @@
               <img src="../IMAGES/avatar.png" alt="" />
             </div>
             <div id="logdiv">
-              <p onclick="window.location.href='./register.html'">
+              <!-- <p onclick="window.location.href='./register.html'">
                 Login/Register
-              </p>
+              </p> -->
             </div>
           </div>
           <div id="hc232" onclick="window.location.href='../HTML/ad_post_page.html'">
@@ -117,13 +118,12 @@
     </div> -->
 
     <div class="container">
-      <label id="login_email" for="uname"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="uname" required>
+     <label for="uname"><b>Email</b></label>
+      <input id="login_email" type="text" placeholder="Enter Email" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
-      <input id="login_psw" type="password" placeholder="Enter Password" name="psw" required>
+      <input  id="login_psw" type="password" placeholder="Enter Password" name="psw" required>
         
-
        <input type="submit" id="loginsubmit" value="Login">
 
       <!-- <button type="submit" onclick="loginUser()" >Login</button> -->
@@ -219,6 +219,9 @@ window.onclick = function(event) {
 
 document.querySelector(".registerbtn").addEventListener("click",registerUser)
 
+let register_url = "http://localhost:8080/user/register"
+
+
 function registerUser(e){
   e.preventDefault()
   let obj = {
@@ -227,28 +230,146 @@ function registerUser(e){
     pass:document.querySelector("#psw").value,
     age:document.querySelector("#age").value
   }
-
-
   console.log(obj)
+  registerconnect(obj)
+
 }
+async function registerconnect(obj){
+
+    try {
+        let res = await fetch(register_url,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(obj)
+        })
+        let data = await res.json()
+        if(data.message==="Resgistered"){
+          alert(data.message);
+          window.location.href="../index.html"
+        }
+    } catch (error) {
+        console.log(error.message)
+    }  
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 document.querySelector("#loginsubmit").addEventListener("click",loginUser)
 
 function loginUser(e){
   e.preventDefault()
   let obj={
-    email:document.querySelector(".modal-content #email").value,
-    password:document.querySelector(".modal-content #psw").value
+    email:document.querySelector("#login_email").value,
+    pass:document.querySelector("#login_psw").value
   }
   console.log(obj)
+  connect(obj)
+}
+
+let loginurl = "http://localhost:8080/user/login"
+
+async function connect(obj){
+  try {
+        let res = await fetch(loginurl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(obj),
+        });
+        let data = await res.json();
+        let login_token = data.token;
+
+
+        let loggedinUser = data.logged_in_username;
+        let loggedinemail = data.logged_in_email;
+        let loggedinage = data.logged_in_age;
+        let loggedinid = data.logged_in_id;
+
+
+         localStorage.setItem("lid", loggedinid);
+        localStorage.setItem("lname", loggedinUser);
+        localStorage.setItem("lemail", loggedinemail);
+        localStorage.setItem("lage", loggedinage);
+
+
+        localStorage.setItem("token", login_token);
+        console.log(data.token);
+        // alert(data.message);
+
+        if (data.message === "Login Sucessfull") {
+          alert(data.message);
+          window.location.href = "../index.html";
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.log(error.message);
+        alert(error.message);
+      }
+      
+};
+
+
+
+
+ 
+  let login_Username = localStorage.getItem("lname")
+  console.log(login_Username)
+
+  let xname=""
+
+  if(!login_Username){
+    xname="Login/Register"
+  }else{
+    xname=login_Username
+  }
+        
+      
+
+let userlogo = document.querySelector("#adminlogo")
+
+
+
+// userlogo.innerHTML = `
+//        ${xlogo.innerHTML}
+
+
+// `
+
+let xlogo = `<img src="./IMAGES/avatar.png" alt="" />`
+
+if(login_Username===null){
+
+}else{
+  // xlogo=`<img src="./IMAGES/avatar.png" alt="" /> onclick="window.location.href="./HTML/User_Page.html""`
+  userlogo.addEventListener("click",()=>{
+  window.location.href="./User_Page.html"
+})
 }
 
 
+let logbox = document.querySelector("#logdiv")
 
+logbox.innerHTML=`
+  <p onclick="document.getElementById('id01').style.display='block'" >${xname}</p>
 
-
-
-
+`
 
 
 

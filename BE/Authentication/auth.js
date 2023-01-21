@@ -9,6 +9,12 @@ const auth = (req, res, next) => {
       if (decoded) {
         // console.log(decoded);
         req.body.userID = decoded.userID;
+        req.body.user_name = decoded.user_name;
+        req.body.user_email = decoded.user_email;
+        req.body.user_age = decoded.user_age;
+        // req.body.user_id = decoded.user_id;
+
+        // console.log(req.body.user_name)
         next();
       } else {
         res.send({ message: "kindly Login First" });

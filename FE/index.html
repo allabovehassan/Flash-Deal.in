@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./CSS/footer.css" />
     <link rel="stylesheet" href="./CSS/header.css" />
     <link rel="stylesheet" href="./CSS/indexpage.css" />
+    <link rel="icon" type="image/x-icon" href="./IMAGES/FlashDeal_icon-removebgcrped.png">
   </head>
   <body>
     <div id="headerChild1">
@@ -100,12 +101,10 @@
         <div id="hc23">
           <div id="hc231">
             <div id="adminlogo">
-              <img src="./IMAGES/avatar.png" alt="" />
+             <img  src="./IMAGES/avatar.png" alt="" />
             </div>
             <div id="logdiv">
-              <p onclick="document.getElementById('id01').style.display='block'" >
-                Login/Register
-              </p>
+              
             </div>
           </div>
           <div id="hc232" onclick="window.location.href='./HTML/ad_post_page.html'">
@@ -553,9 +552,55 @@
   </form>
 </div>
 
-  </body>
+</body>
 </html>
 <script>
+  
+  let login_Username = localStorage.getItem("lname")
+  let login_Useremail = localStorage.getItem("lemail")
+  let login_Userage = localStorage.getItem("lage")
+  console.log(login_Username)
+
+  let xname=""
+
+  if(!login_Username){
+    xname="Login/Register"
+  }else{
+    xname=login_Username
+  }
+        
+      
+
+let userlogo = document.querySelector("#adminlogo")
+
+
+
+// userlogo.innerHTML = `
+//        ${xlogo.innerHTML}
+
+
+// `
+
+let xlogo = `<img src="./IMAGES/avatar.png" alt="" />`
+
+if(login_Username===null){
+
+}else{
+  // xlogo=`<img src="./IMAGES/avatar.png" alt="" /> onclick="window.location.href="./HTML/User_Page.html""`
+  userlogo.addEventListener("click",()=>{
+  window.location.href="./HTML/User_Page.html"
+})
+}
+
+
+let logbox = document.querySelector("#logdiv")
+
+logbox.innerHTML=`
+  <p onclick="document.getElementById('id01').style.display='block'" >${xname}</p>
+
+`
+
+
   var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -565,19 +610,71 @@ window.onclick = function(event) {
     }
 }
 
+
+
+
+
+
+
+
+
 document.querySelector("#loginsubmit").addEventListener("click",loginUser)
 
 function loginUser(e){
   e.preventDefault()
   let obj={
     email:document.querySelector(".modal-content #email").value,
-    password:document.querySelector(".modal-content #psw").value
+    pass:document.querySelector(".modal-content #psw").value
   }
   console.log(obj)
+  connect(obj)
 }
 
+let url = "http://localhost:8080/user/login"
+
+async function connect(obj){
+  try {
+        let res = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(obj),
+        });
+        let data = await res.json();
+        let login_token = data.token;
+
+        let loggedinUser = data.logged_in_username;
+        let loggedinemail = data.logged_in_email;
+        let loggedinage = data.logged_in_age;
+        let loggedinid = data.logged_in_id;
 
 
+        
+        localStorage.setItem("lid", loggedinid);
+        localStorage.setItem("lname", loggedinUser);
+        localStorage.setItem("lemail", loggedinemail);
+        localStorage.setItem("lage", loggedinage);
+        // console.log(loggedinUser)
+
+        localStorage.setItem("token", login_token);
+        console.log(data.token);
+        // alert(data.message);
+
+        if (data.message === "Login Sucessfull") {
+          alert(data.message);
+          window.location.reload()
+          // window.location.href = "./notes.html";
+        } else {
+          alert(data.message);
+          // localStorage.clear()
+        }
+      } catch (error) {
+        console.log(error.message);
+        alert(error.message);
+      }
+      
+};
 
 
 </script>
