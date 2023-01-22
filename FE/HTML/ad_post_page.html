@@ -97,7 +97,7 @@
   <div id="postbox21">
 
     
-    <form action="">
+    <form action=""  enctype="multipart/form-data">
       
       <label for="title"></label>
       <input id="title" type="text" name="title" placeholder="Enter Title" value="">
@@ -122,8 +122,8 @@
       <label for="contact"></label>
       <input id="contact" type="text" name="contact" placeholder="Enter Contact Number" value="">
 
-      <label for="uploadimg"></label>
-      <input id="uploadimg" type="file" name="uploadimg" value="">
+      <label for="img_src"></label>
+      <input id="img_src" type="text" name="photo" value="" placeholder="Enter Image Link">
       
       <label for="submit"></label>
       <input id="submit" type="submit" value="SUBMIT" >
@@ -218,7 +218,7 @@ year:document.querySelector("#year").value,
 owner:document.querySelector("#owner").value,
 price:document.querySelector("#price").value,
 contact:document.querySelector("#contact").value,
-img:document.querySelector("#uploadimg").value
+img_src:document.querySelector("#img_src").value
 
 }
 

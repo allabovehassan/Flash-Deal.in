@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Deal | OTP</title>
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="icon" type="image/x-icon" href="../IMAGES/FlashDeal_icon-removebgcrped.png">
+    <style>
+
+        body{
+             background-color: #f3f3f3;
+        }
+
+        #box {
+
+            /* width: 20%;
+            margin: auto;
+            height: auto;
+            text-align: center;
+            margin-top: 13%;
+            padding-top: 3%;
+            padding-bottom: 2%;
+            padding-left: 2%;
+            padding-right: 3%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+
+              /* border: 1px solid red; */
+            width: 20%;
+            margin: auto;
+            height: auto;
+            text-align: center;
+            margin-top: 5%;
+            margin-bottom: 13%;
+            padding-top: 3%;
+            padding-bottom: 2%;
+            padding-left: 2%;
+            padding-right: 3%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background-color: white;
+
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            color: rgb(51, 51, 51);
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        #submit {
+            /* margin-top: 9%;
+            width: 30%;
+            height: 30px; */
+
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 303px;
+            opacity: 0.9;
+            border-radius: 5px;
+        }
+
+
+        #submit:hover{
+            opacity: 1;
+        }
+
+
+        #otp {
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<header>
+      <div id="headerChild2">
+        <div id="hc21" onclick="window.location.href='../index.html'">
+          <img src="../IMAGES/Flash_Deal_Logonew.png" alt="flash deal logo" />
+        </div>
+
+        <div id="hc22">
+          <div id="hc221">
+            <div id="cityname">
+              <img src="../IMAGES/pin.png" alt="" />
+            </div>
+
+            <div id="cityform">
+              <select name="city" id="city">
+                <option value="volvo"></option>
+                <option value="volvo">Delhi</option>
+                <option value="saab">Mumbai</option>
+                <option value="mercedes">Banglore</option>
+                <option value="audi">Chennai</option>
+              </select>
+            </div>
+          </div>
+          <div id="hc222">
+            <div id="insearch">
+              <input
+                type="search"
+                id="searchpro"
+                placeholder="Enter Products"
+              />
+            </div>
+            <div id="insubmit">
+              <img src="../IMAGES/searchwhite.png" alt="search" />
+            </div>
+          </div>
+        </div>
+
+        <div id="hc23">
+          <div id="hc231">
+            <div id="adminlogo">
+             <img  src="../IMAGES/avatar.png" alt="" />
+            </div>
+            <div id="logdiv">
+              
+            </div>
+          </div>
+          <div id="hc232" onclick="window.location.href='../HTML/ad_post_page.html'">
+            <p>Post Free Ad</p>
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <!-- <hr /> -->
+
+
+
+
+<body>
+    <h1>Please Enter OTP</h1>
+    <div id="box">
+        <form id="form">
+
+            <input id="otp" type="password" placeholder="OTP">
+            <br>
+            <input id="submit" type="submit">
+        </form>
+    </div>
+
+
+<!-- ----------------------------- -->
+
+<footer >
+      <div id="f1" style="border-right: 0.5px solid lightgray">
+        <div id="f11">
+          <a href="">About Us</a>
+          <a href="">Contact Us</a>
+          <a href="">Flash Deal Videos</a>
+          <a href="">Advertise With Us</a>
+          <a href="">Blog</a>
+        </div>
+        <div id="f12">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
+            ipsam ratione officiis perferendis nobis ad libero, totam esse
+            excepturi mollicdtia, accusamus sit laboriosam voluptas quo
+            consectetur voluptatem facere eaque fugit unde. Architecto quod
+            nulla minima quas ipsam eos recusandae cupiditate. Qui eveniet
+            officiis ducimus veniam .
+          </p>
+        </div>
+        <!-- <div id="f13">
+          <span
+            >At Flash Deal, you can buy, sell or rent anything you can think of.
+          </span>
+          <div onclick="window.location.href='./HTML/ad_post_page.html'">
+            <p>Post Free Ad</p>
+          </div>
+        </div> -->
+
+          <div id="f13">
+          <span
+            >At Flash Deal, you can buy, sell or rent anything you can think of.
+          </span>
+          <div onclick="window.location.href='../HTML/ad_post_page.html'" style="margin-right:35% ;">
+            <p>Post Free Ad</p>
+          </div>
+          <div id="logout" style="margin-left: -30%; margin-right: 10%; display: flex; justify-content: center; align-items: center;" onclick="logoutfun()">
+            Logout
+          </div>
+        </div>
+
+
+      </div>
+      <div id="f2">
+        <div id="f211">
+          <div class="f2icon">
+            <p>Follow Us</p>
+          </div>
+          <div class="f2icon">
+            <img src="../IMAGES/facebook.png" alt="" />
+          </div>
+          <div class="f2icon">
+            <img src="../IMAGES/linkedin.png" alt="" />
+          </div>
+          <div class="f2icon"><img src="../IMAGES/youtube.png" alt="" /></div>
+          <div class="f2icon"><img src="../IMAGES/twitter.png" alt="" /></div>
+          <div class="f2icon">
+            <img src="../IMAGES/google-plus.png" alt="" />
+          </div>
+        </div>
+        <nav>
+          <div class="navc">
+            <p>Download App</p>
+          </div>
+          <div class="navc">
+            <img src="../IMAGES/apple-logo.png" alt="" />
+          </div>
+          <div class="navc">
+            <img src="../IMAGES/play-store.png" alt="" />
+          </div>
+        </nav>
+      </div>
+    </footer>
+
+    <div id="last">
+      Copyright © 2008 - 2023 Flash Deal India Private Limited
+    </div>
+
+
+
+
+</body>
+
+</html>
+<script src="../Scripts/otp.js"></script>

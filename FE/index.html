@@ -57,7 +57,7 @@
         </div>
 
         <div id="childofhc162">
-          <p onclick="location.href='./HTML/cart.html'">Cart</p>
+          <p>Shop</p>
         </div>
       </div>
     </div>
@@ -429,7 +429,7 @@
 
     <h2>Browse by Category</h2>
     <div id="mid7">
-      <div class="mid71" style="border-right: 0.5px solid lightgray">
+      <div class="mid71" style="border-right: 0.5px solid lightgray" >
         <img src="./IMAGES/mobileandtab.png" alt="" />
         <p>Mobiles & Tablets</p>
       </div>
@@ -676,5 +676,50 @@ async function connect(obj){
       
 };
 
+let shop = document.querySelector("#childofhc162")
+shop.addEventListener("click",()=>{
 
+  if(login_Username===null){
+    alert("Please Login for Products")
+    
+    }else{
+
+      window.location.href="./HTML/products.html"
+  
+
+
+}
+})
+
+let browse = document.querySelector("#mid7")
+browse.addEventListener("click",()=>{
+
+  if(login_Username===null){
+    alert("Please Login for Products")
+    
+    }else{
+
+      window.location.href="./HTML/products.html"
+  
+
+
+}
+})
+
+
+
+let mid1 = document.querySelector("#mid1")
+mid1.addEventListener("click",()=>{
+
+  if(login_Username===null){
+    alert("Please Login for Products")
+    
+    }else{
+
+      window.location.href="./HTML/products.html"
+  
+
+
+}
+})
 </script>
