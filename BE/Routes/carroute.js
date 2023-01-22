@@ -1,13 +1,22 @@
 const express = require("express");
 const carRoute = express.Router();
 const { carModel } = require("../models/cars");
+const cloudinary = require("cloudinary").v2;
+
+cloudinary.config({
+  cloud_name: "drzmowsgg",
+  api_key: "688111654221173",
+  api_secret: "41aJg5n6qdEMvTqpu7d0qg32gXM",
+  secure: true,
+});
+
 
 carRoute.get("/", async (req, res) => {
   try {
     let data = await carModel.find();
     res.send(data);
   } catch (error) {
-    res.send(error.message);
+    res.send({"message":error.message});
   }
 });
 
@@ -31,7 +40,13 @@ carRoute.post("/add", async (req, res) => {
   try {
     const mobiledata = new carModel(payload);
     await mobiledata.save();
-    // res.send(notesdata);
+    
+    // const file = req.files.photo;
+    // cloudinary.uploader.upload(file.tempFilePath, (err, result) => {
+    //   console.log(result);
+    // })
+
+
     res.send({ message: "Veichle Ad Created" });
   } catch (error) {
     console.log(error.message);

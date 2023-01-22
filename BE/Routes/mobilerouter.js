@@ -7,7 +7,7 @@ mobileRoute.get("/", async (req, res) => {
     let data = await mobileModel.find();
     res.send(data);
   } catch (error) {
-    res.send(error.message);
+     res.send({ message: error.message });
   }
 });
 

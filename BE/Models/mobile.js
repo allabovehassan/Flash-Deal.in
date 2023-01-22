@@ -8,6 +8,7 @@ const mobileSchema = mongoose.Schema(
     owner: String,
     price: String,
     contact: String,
+    img_src:String,
     userID:String
   },
   {

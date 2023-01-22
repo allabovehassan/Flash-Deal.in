@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flash Deal | Cart</title>
+    <title>Products Update</title>
     <link rel="icon" type="image/x-icon" href="../IMAGES/FlashDeal_icon-removebgcrped.png">
     <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/products_update.css">
 </head>
 <body>
     
@@ -64,11 +65,49 @@
         </div>
       </div>
 
-      <!-- <hr /> -->
     </header>
+    
+    <!-- <hr /> -->
+      
+    <h3>Update Your Products Details</h3>
+
+        <div id="update_pro">
+
+
+        <form id="update_pro_form">
+            <label for="name"></label><br>
+            <input type="text" id="name" name="name" value="" placeholder="Enter Name">
+            <br>
+            
+            
+            
+            <label for="email"></label><br>
+            <input type="text" id="email" name="email" value="" placeholder="Enter Email">
+            <br>
+            
+            
+            <label for="age"></label><br>
+            <input type="text" id="age" name="age" value="" placeholder="Enter Age">
+            <br>
+            
+            
+            <label for="psw"></label><br>
+            <input type="password" id="psw" name="psw" value="" placeholder="Confirm Password">
+            <br>
+            
+            <br>
+            <br>
+            
+            <input type="submit" id="submit" value="Update">
+            
 
 
 
+        </form>
+
+
+
+        </div>
 
     <!-- ------------------------------------------------------------------------------------ -->
 
@@ -138,6 +177,7 @@
 
 <script>
 
+
 let login_Username = localStorage.getItem("lname")
   console.log(login_Username)
 
@@ -152,14 +192,6 @@ let login_Username = localStorage.getItem("lname")
       
 
 let userlogo = document.querySelector("#adminlogo")
-
-
-
-// userlogo.innerHTML = `
-//        ${xlogo.innerHTML}
-
-
-// `
 
 let xlogo = `<img src="./IMAGES/avatar.png" alt="" />`
 

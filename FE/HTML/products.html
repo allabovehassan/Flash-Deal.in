@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="../IMAGES/FlashDeal_icon-removebgcrped.png">
     <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/products_page.css">
 </head>
 <body>
     
@@ -65,8 +66,27 @@
     </header>
     <!-- <hr /> -->
 
+<div id="cont">
+
+  
+  <h3 onclick="connect_car()">All Products & Ads</h3>
+  <select name="" id="Product_dropdown" style="background-color: #f3f3f3;" onchange="chang()">
+    <option value=""></option>
+    <option value="Electronic Devices" >Electronic Devices</option>
+    <option value="Veichle">Veichle</option>
+    <option value="Furniture & Decor">Furniture & Decor</option>
+    <option value="Jobs & Services">Jobs & Services</option>
+  </select>
+</div>
+<div id="product_box">
 
 
+
+
+
+
+
+</div>
 
 
     
@@ -136,6 +156,22 @@
 <script>
 
 
+ let token = localStorage.getItem("token")
+
+
+function chang(){
+  let ans = document.getElementById("Product_dropdown").value;
+  
+
+  if(ans==="Electronic Devices"){
+      connect_mobile()
+  }else if(ans==="Veichle"){
+      connect_car()
+  }
+
+}
+
+
 
 
 
@@ -152,15 +188,11 @@ let login_Username = localStorage.getItem("lname")
         
       
 
+  
+  
+  
+  
 let userlogo = document.querySelector("#adminlogo")
-
-
-
-// userlogo.innerHTML = `
-//        ${xlogo.innerHTML}
-
-
-// `
 
 let xlogo = `<img src="./IMAGES/avatar.png" alt="" />`
 
@@ -169,7 +201,7 @@ if(login_Username===null){
 }else{
   // xlogo=`<img src="./IMAGES/avatar.png" alt="" /> onclick="window.location.href="./HTML/User_Page.html""`
   userlogo.addEventListener("click",()=>{
-  window.location.href="./HTML/User_Page.html"
+  window.location.href="../HTML/User_Page.html"
 })
 }
 
@@ -181,5 +213,155 @@ logbox.innerHTML=`
 
 `
 
+let carAdlink = "http://localhost:8080/car/"
+
+async function connect_car(){
+  try {
+    let res = await fetch(carAdlink,{
+      headers:{
+        "token":token
+      }
+    })
+
+    let data = await res.json()
+    // connect_mobile(data)
+    display_car(data)
+    // console.log(data)
+
+  } catch (error) {
+    alert(data.message)
+  }
+
+
+
+}
+
+let mobileAdlink = "http://localhost:8080/mobile/"
+
+async function connect_mobile(){
+
+
+  try {
+    let res = await fetch(mobileAdlink,{
+      headers:{
+        "token":token
+      }
+    })
+
+    let data = await res.json()
+
+    // let newArr=[...arr,...data]
+
+    display_mobile(data)
+    // console.log(newArr)
+
+
+  } catch (error) {
+    alert(data.message)
+  }
+}
+
+
+
+
+
+
+
+
+
+ function display_car (newArr) {
+
+
+     let div=document.querySelector("#product_box");
+        div.innerHTML=""
+        div.innerHTML+=newArr.map(e => {
+            return `
+            <div id="innerdiv" >
+              <div id ="innerdiv_img">
+
+                <img src="${e.img_src}" alt="">
+
+                </div>
+
+                <div id="innerdiv_data">
+                  
+                  
+                  
+                  <B>Title</B> : <em>${e.title}</em> 
+                  <hr>
+                  <B>Model</B> : <em>${e.model}</em>
+                  <hr>
+                  
+                  <B>Year</B> : <em>${e.year}</em>
+                  <hr>
+                  
+                  <B>Owner</B> : <em>${e.owner}</em>
+                  <hr>
+                  
+                  <B>Price</B> : <em>${e.price}</em>
+                  <hr>
+                  
+                  <B>Contact</B> : <em>${e.contact}</em>
+                  <hr>
+                  
+                  
+                  <button onclick="payment()" style="width: 30%"; margin-left: 20%;">Buy Now</button>
+                  </div>
+            
+
+            </div>`
+        }).join("");
+       
+    }
+
+
+
+function display_mobile (newArr) {
+
+
+    let div=document.querySelector("#product_box");
+        div.innerHTML=""
+        div.innerHTML+=newArr.map(e => {
+            return `
+           <div id="innerdiv" >
+              <div id ="innerdiv_img">
+                <img src="${e.img_src}" alt="">
+
+                </div>
+
+                <div id="innerdiv_data">
+                  
+                  
+                  
+                  <B>Title</B> : <em>${e.title}</em> 
+                  <hr>
+                  <B>Ram</B> : <em>${e.ram}</em>
+                  <hr>
+                  
+                  <B>Brand</B> : <em>${e.brand}</em>
+                  <hr>
+                  
+                  <B>Owner</B> : <em>${e.owner}</em>
+                  <hr>
+                  
+                  <B>Price</B> : <em>${e.price}</em>
+                  <hr>
+                  
+                  <B>Contact</B> : <em>${e.contact}</em>
+                  <hr>
+                  
+                  
+                  <button onclick=deleteit("${e._id}") style="width: 30%"; margin-left: 20%;">Buy Now</button>
+                  </div>
+            
+
+            </div>`
+        }).join("");
+
+    }
+
+function payment(){
+  window.location.href="../HTML/payment-page.html"
+}
 
 </script>

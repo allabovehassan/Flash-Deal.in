@@ -123,7 +123,7 @@
           <span
             >At Flash Deal, you can buy, sell or rent anything you can think of.
           </span>
-          <div onclick="window.location.href='./HTML/ad_post_page.html'" style="margin-right:35% ;">
+          <div onclick="window.location.href='../HTML/ad_post_page.html'" style="margin-right:35% ;">
             <p>Post Free Ad</p>
           </div>
           <div id="logout" style="margin-left: -30%; margin-right: 10%; display: flex; justify-content: center; align-items: center;" onclick="logoutfun()">
@@ -181,7 +181,7 @@ let login_Username = localStorage.getItem("lname")
 
   function fetchad(){
     fetchUserAds()
-    fetchUserAds2()
+    // fetchUserAds2()
     // window.location.reload()
   }
 
@@ -279,7 +279,8 @@ try {
     }
   })
     let data = await res.json()
-  display(data)
+    fetchUserAds2(data)
+    // display(data)
   console.log(data)
   // console.log(my_car_ad_url)
     
@@ -295,7 +296,7 @@ try {
 
 let my_mobile_ad_url = "http://localhost:8080/mobile/myads/"+login_id
 
-async function fetchUserAds2(){
+async function fetchUserAds2(arr){
 
 try {
   let res = await fetch(my_mobile_ad_url,{
@@ -304,7 +305,9 @@ try {
     }
   })
     let data = await res.json()
-  display(data)
+  let newArr=[...arr,...data]
+
+  display(newArr)
   console.log(data)
   // console.log(my_mobile_ad_url)
     
@@ -317,6 +320,9 @@ try {
 
 
 }
+
+
+
 
 
 function display(elem){
@@ -334,18 +340,39 @@ function display(elem){
             <hr>
             <B>Owner</B> : <em>${e.owner}</em>
             <hr>
-            <B>Year</B> : <em>${e.price}</em>
+            <B>Price</B> : <em>${e.price}</em>
             <hr>
             <B>Contact</B> : <em>${e.contact}</em>
             
             <hr>
-            <button onclick=deleteit("${e._id}") style="width: 30%"; margin-left: 20%;">Delete</button>
-            <button onclick=updateit("${e._id}") style="width: 30%;">Update</button>
+            <button onclick="deletepro()" style="width: 30%"; margin-left: 20%;">Delete</button>
+            <button onclick="updatepro()" style="width: 30%;">Update</button>
             <hr>
 
             </div>`
         }).join("");
     }
+
+
+    function updatepro(){
+
+      window.location.href="./products_update.html"
+
+
+      // updateit("${e._id}")
+    }
+
+
+    let deletepro_link = "http://localhost:8080//"
+
+    async function deletepro(){
+
+
+
+
+      // deleteit("${e._id}") 
+    }
+
 
 
 </script>
