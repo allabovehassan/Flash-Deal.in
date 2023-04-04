@@ -108,12 +108,7 @@ https://wonderful-alfajores-4d5172.netlify.app/
 ![image](https://user-images.githubusercontent.com/112754393/229732971-3e4ce8d5-d766-4606-8647-fbf0080d1d7b.png)
 
 
-## System Architecture
-![image](https://i.imgur.com/oJW6QQe.jpeg)
 
-
-## ER Diagram
-![drawSQL-lifecare-export-2023-04-03](https://user-images.githubusercontent.com/112754547/229438041-993e6356-22cd-49b0-8905-6867cd4f36e9.png)
 
 
 
