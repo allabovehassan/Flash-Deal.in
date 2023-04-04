@@ -14,7 +14,6 @@ Our aim is to empower every person in the country to independently connect with 
 
 - Admin / User Login
 - Authentication
-- Autherization
 - Post / Edit / Delete Adds
 - Track Adds
 - Paymnet Page
@@ -106,7 +105,8 @@ https://wonderful-alfajores-4d5172.netlify.app/
 
 
 ## Workflow Diagram
-![image](https://user-images.githubusercontent.com/112754393/229429364-4f9e7424-d5b2-4386-aad8-b4f7f22c19bf.png)
+![image](https://user-images.githubusercontent.com/112754393/229732971-3e4ce8d5-d766-4606-8647-fbf0080d1d7b.png)
+
 
 ## System Architecture
 ![image](https://i.imgur.com/oJW6QQe.jpeg)
